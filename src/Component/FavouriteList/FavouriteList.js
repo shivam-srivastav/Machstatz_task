@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import planet from "../../Assets/planet1.svg";
 import fav from "../../Assets/fav.svg";
 import not_fav from "../../Assets/not_fav.svg";
