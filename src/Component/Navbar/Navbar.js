@@ -1,16 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
-import icon from "../../Assets/planet.jpg";
 import { bindActionCreators } from "redux";
 import * as actions from "./../../Redux/Action/action";
-import "./Navbar.scss";
 import { Link } from "react-router-dom";
+import icon from "../../Assets/planet.jpg";
+import "./Navbar.scss";
+
 const NavBar = ({ open, actions }) => {
-  // const [open, setopen] = useState("all-planet");
   const toggle = (e) => {
     const data = e.target.getAttribute("data-open");
     actions.set_open(data);
   };
+
   return (
     <div className="navbar">
       <div className="navbar-icon">
@@ -30,11 +31,7 @@ const NavBar = ({ open, actions }) => {
           </Link>
         </li>
         <li style={{ color: `#ec524b` }}>|</li>
-        <li
-          data-open="favourite"
-          onClick={toggle}
-          // style={{ color: open === "favourite" ? `#ffd66b` : "grey" }}
-        >
+        <li data-open="favourite" onClick={toggle}>
           <Link to="favourite">
             <p
               data-open="favourite"

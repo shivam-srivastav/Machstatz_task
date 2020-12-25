@@ -5,9 +5,9 @@ import {
   ADD_FAVOURITE,
   SET_OPEN,
   SET_LOADING,
+  LOAD_FAIL,
 } from "./action_type";
 import store from "../Store/index";
-// import {  } from "./action_type";
 
 export function fetch_data_from_api() {
   return (dispatch) => {
@@ -18,7 +18,10 @@ export function fetch_data_from_api() {
         dispatch(load_data(res.data));
         dispatch(set_loading(false));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        dispatch(load_fail(err));
+        dispatch(set_loading(false));
+      });
     // console.log(data);
   };
 }
@@ -44,4 +47,7 @@ export function set_open(data) {
 }
 export function set_loading(data) {
   return { type: SET_LOADING, data };
+}
+export function load_fail(data) {
+  return { type: LOAD_FAIL, data };
 }

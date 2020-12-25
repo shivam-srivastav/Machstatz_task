@@ -1,23 +1,19 @@
 import React from "react";
-import planet from "../../Assets/planet1.svg";
-import fav from "../../Assets/fav.svg";
-import not_fav from "../../Assets/not_fav.svg";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "./../../Redux/Action/action";
+
+import planet from "../../Assets/planet1.svg";
+import fav from "../../Assets/fav.svg";
+import not_fav from "../../Assets/not_fav.svg";
 import "./FavouriteList.scss";
-// import axios from "axios";
+
 const FavouriteList = ({ actions, data, loading, favourite }) => {
-  // const [favourite, setfavourite] = useState(false);
-  // const [loading, setLoading] = useState(true);
   const handleFav = (e) => {
     const id = e.target.getAttribute("data-id");
     actions.favourite_toggle(id);
-    // setfavourite(true);
-    console.log(id);
   };
-  // const filteredData = data.filter((item)=>item.id===favourite.)
-  console.log(data[1]);
+
   return (
     <div>
       {loading ? (

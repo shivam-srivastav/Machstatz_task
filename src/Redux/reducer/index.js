@@ -7,6 +7,8 @@ const initialState = {
   favourite: [],
   open: "all-planet",
   loading: "true",
+  fetch_error: false,
+  fetch_error_msg: "",
 };
 
 function rootReducer(state = initialState, action) {
@@ -35,6 +37,12 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         loading: action.data,
+      };
+    case AT.LOAD_FAIL:
+      return {
+        ...state,
+        fetch_error: true,
+        fetch_error_msg: action.data,
       };
     default:
       return state;

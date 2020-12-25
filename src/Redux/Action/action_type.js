@@ -3,3 +3,4 @@ export const ADD_FAVOURITE = "ADD_FAVOURITE";
 export const LOAD_DATA = "LOAD_DATA";
 export const SET_OPEN = "SET_OPEN";
 export const SET_LOADING = "SET_LOADING";
+export const LOAD_FAIL = "LOAD_FAIL";
