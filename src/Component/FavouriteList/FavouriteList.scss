@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   // height: 100vh;
   padding-top: 5rem;
+
   ul {
     width: 100%;
     height: 80vh;
@@ -11,8 +12,11 @@
     flex-wrap: wrap;
     overflow: auto;
   }
+  ul::-webkit-scrollbar {
+    display: none;
+  }
   .card {
-    border: 1px solid #000;
+    // border: 1px solid #000;
     width: 13rem;
     height: 20rem;
     display: flex;
@@ -36,9 +40,6 @@
       }
       background-color: transparent;
       margin: 1rem;
-    }
-    .text {
-      background-color: #000;
     }
   }
 }

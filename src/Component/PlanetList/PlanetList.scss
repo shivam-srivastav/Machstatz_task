@@ -21,9 +21,10 @@
     margin-top: 3rem;
     flex-wrap: wrap;
     overflow: auto;
+    display: flex;
+    align-items: center;
   }
   .card {
-    border: 1px solid #000;
     width: 13rem;
     height: 20rem;
     display: flex;
@@ -47,9 +48,6 @@
       }
       background-color: transparent;
       margin: 1rem;
-    }
-    .text {
-      background-color: #000;
     }
   }
 }
