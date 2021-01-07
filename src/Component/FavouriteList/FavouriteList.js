@@ -2,16 +2,33 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "./../../Redux/Action/action";
-
-import planet from "../../Assets/planet1.svg";
+// import planet from "../../Assets/planet1.svg";
 import fav from "../../Assets/fav.svg";
 import not_fav from "../../Assets/not_fav.svg";
 import "./FavouriteList.scss";
+
+import planet2 from "../../Assets/planet2.svg";
+import planet3 from "../../Assets/planet3.svg";
+import planet4 from "../../Assets/planet4.svg";
+import planet5 from "../../Assets/planet5.svg";
+import planet6 from "../../Assets/planet6.svg";
+import planet7 from "../../Assets/planet7.svg";
+// import planet8 from "../../Assets/planet1.svg";
 
 const FavouriteList = ({ actions, data, loading, favourite }) => {
   const handleFav = (e) => {
     const id = e.target.getAttribute("data-id");
     actions.favourite_toggle(id);
+  };
+
+  const Planet = {
+    0: planet4,
+    1: planet2,
+    2: planet3,
+    3: planet4,
+    4: planet5,
+    5: planet6,
+    6: planet7,
   };
 
   return (
@@ -34,7 +51,10 @@ const FavouriteList = ({ actions, data, loading, favourite }) => {
                   <div className="card" key={key}>
                     {" "}
                     <li>
-                      <img src={planet} alt="neptune" />
+                      <img
+                        src={Planet[Math.floor(Math.random() * 7)]}
+                        alt="neptune"
+                      />
                     </li>
                     <li className="text">
                       <p>
